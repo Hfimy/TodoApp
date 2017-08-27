@@ -7,7 +7,7 @@ import TodoItem from './todoItem'
 
 const TodoList = ({ todos, onToggleTodo, onRemoveTodo }) => {
     return (
-        <ul>
+        <ul className='todo_list'>
             {
                 todos.map(item => {
                     return <TodoItem
@@ -27,9 +27,30 @@ TodoList.propTypes={
     onToggleTodo:PropTypes.func.isRequired,
     onRemoveTodo:PropTypes.func.isRequired
 }
+
+const selectVisibleTodos=(todos,filter)=>{
+    switch(filter){
+        case 'all':{
+            return todos
+        }
+        case 'completed':{
+            return todos.filter(item=>{
+                return item.completed
+            })
+        }
+        case 'uncompleted':{
+            return todos.filter(item=>{
+                return !item.completed
+            })
+        }
+        default:{
+            throw new Error('unsupported filter')
+        }
+    }
+}
 const mapStateToProps = (state) => {
     return {
-        todos: state.todos
+        todos: selectVisibleTodos(state.todos,state.filter)
     }
 }
 

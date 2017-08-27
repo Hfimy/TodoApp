@@ -1,0 +1,27 @@
+*{
+    margin:0;
+    padding:0;
+}
+.filters{
+    font-size: 20px;
+    margin-left:50px;
+}
+
+.filters .filter{
+    margin-right:20px;
+    border:1px solid transparent;
+    border-radius:3px;
+}
+.filters .selected{
+    color:#3f7;
+}
+
+.filters .not_selected{
+    text-decoration: none;
+    color:#333;
+    border-color:rgba(175,47,47,0.2);
+    transition:border-color 1s ease-in;
+}
+.filters .not_selected:hover{
+    border-color: rgba(130,30,50,0.4)
+}

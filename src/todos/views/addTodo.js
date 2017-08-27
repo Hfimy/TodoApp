@@ -5,22 +5,31 @@ import {add_todo} from '../actions'
 import { connect } from 'react-redux'
 
 class AddTodo extends Component {
+    constructor(){
+        super(...arguments)
+        this.state={
+            value:''
+        }
+    }
     onSubmit(e) {
         //取消表单提交的默认行为
         e.preventDefault();
-        const input = this.refs.input
-        if (!input.value.trim()) {
+        if (!this.state.value.trim()) {
             return
         }
-        this.props.addTodo(input.value);
-        input.value = ''
+        this.props.addTodo(this.state.value);
+        // input.value = ''
+        this.setState({value:''})
+    }
+    onInputChange(e){
+        this.setState({value:e.target.value});
     }
     render() {
         return (
-            <div>
+            <div className='add_todo'>
                 <form onSubmit={this.onSubmit.bind(this)}>
-                    <input ref='input' />
-                    <button type='submit'>Add</button>
+                    <input className='add_input' onChange={this.onInputChange.bind(this)} value={this.state.value}/>
+                    <button className='add_btn' type='submit'>Add</button>
                 </form>
             </div>
         )

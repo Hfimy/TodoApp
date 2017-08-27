@@ -1,0 +1,75 @@
+*{margin:0;padding:0}
+.todos{
+    width:400px;
+    font-size:18px;
+    margin:10px 10px;
+}
+.add_todo{
+    position:relative
+}
+.add_todo .add_input{
+    /*display: block;*/
+    margin:0 0 20px 50px;
+    font-size: 20px;
+    /*font-smoothing:antialiased;*/
+
+}
+.add_todo .add_btn{
+    font-size: 20px;
+    position: absolute;
+    top:0;
+    right:0
+}
+.todo_list{
+    list-style: none;
+    margin:0 0 0 50px;
+    padding:0;
+    font-size: 20px;
+
+}
+.todo_item{
+    position: relative;
+    height:50px;
+    line-height: 50px;
+    vertical-align: middle
+}
+.todo_item .toggle{
+    position: absolute;
+    width:15px;
+    height:15px;
+    top:17px;
+    left:0;
+
+}
+/*.todo-item .toggle:after {
+  margin: 10px 0 0 0;
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
+}
+
+.todo-item .toggle:checked:after {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+}*/
+.todo_item .text{
+    padding-left:50px;
+    /*height:30px;*/
+}
+.todo_item .remove{
+    font-size:20px;
+    border:0;
+    background: 0;
+    display: none;
+    position: absolute;
+    top:15px;
+    right:0;
+    color:#00f;
+    transition:color 1s ease-out;
+    /*bottom:0;*/
+    /*width:40px;*/
+    height:20px;
+}
+.todo_item:hover .remove{
+    display:inline-block;
+}
+.todo_item .remove:hover{
+    color:#e31;
+}

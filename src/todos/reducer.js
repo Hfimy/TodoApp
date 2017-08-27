@@ -4,12 +4,12 @@ export default (state = [], action) => {
     switch (action.type) {
         case ADD_TODO: {
             return [
+                ...state,
                 {
                     id: action.id,
                     text: action.text,
                     completed: action.completed
-                },
-                ...state
+                }
             ]
         }
         case TOGGLE_TODO: {
@@ -29,7 +29,8 @@ export default (state = [], action) => {
                 return item.id !== action.id
             })
         }
-        default:{
+        //3.reducer要有对不匹配类型的默认返回值
+        default: {
             return state
         }
     }
