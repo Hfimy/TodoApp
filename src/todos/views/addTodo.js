@@ -42,7 +42,7 @@ AddTodo.propTypes={
 /*const mapDispatchToProps = (dispatch) => {
     return {
         addTodo: (text) => {
-            actions.add_todo(text)
+            dispatch(actions.add_todo(text))
         }
     }
 }*/
